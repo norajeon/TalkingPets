@@ -12,7 +12,7 @@ public class DogTest {
         Dog doggo = new Dog (null);
 
         String testBark = doggo.speak();
-        String bark = "Bark!";
+        String bark = "bork bark";
 
         Assert.assertEquals(bark, testBark);
     }

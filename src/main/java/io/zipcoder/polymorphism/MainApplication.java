@@ -1,5 +1,6 @@
 package io.zipcoder.polymorphism;
 // package io.zipcoder.pets;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -41,24 +42,52 @@ public class MainApplication {
         System.out.println("\nHow many pets do you have?");
         Integer petCount = results.getHowManyPets();
 
-
+        ArrayList<String> arr = new ArrayList<>();
+        String petName = "";
         for (int i = 1; i <= petCount; i++) {
             System.out.println("\nWhat kind of pet is pet #" + i + "?");
             String petType = results.getWhatKindOfPet();
 
             System.out.println("\nWhat is the name of pet #" + i + "?");
-            String petName = results.getNameOfPet();
+            petName = results.getNameOfPet();
 
-            results.pets.put(petType, petName);
+//            results.pets.put(petType, petName);
+
+            arr.add(petType);
 
         }
-
-        
-
-
-        for(Map.Entry<String, String> ans :results.pets.entrySet()) {
-            System.out.println(ans.getKey() + " " + ans.getValue());
+        for(int j = 0; j < arr.size(); j++) {
+            if (arr.get(j).equals("Dog")) {
+                Dog dog = new Dog(petName);
+                System.out.println(arr.get(j) + " named " + dog.getName() + " says " + dog.speak() + ".");
+            }
         }
+
+        for(int j = 0; j < arr.size(); j++) {
+            if (arr.get(j).equals("Cat")) {
+                Cat cat = new Cat(petName);
+                System.out.println(arr.get(j) + " named " + cat.getName() + " says " + cat.speak() + ".");
+            }
+        }
+
+        for(int j = 0; j < arr.size(); j++) {
+            if (arr.get(j).equals("Tiger")) {
+                Tiger tiger = new Tiger(petName);
+                System.out.println(arr.get(j) + " named " + tiger.getName() + " says " + tiger.speak());
+            }
+        }
+
+//        for(Map.Entry<String, String> ans :results.pets.entrySet()) {
+//            if (ans.getKey().equals("Dog")) {
+//                Dog dog = new Dog(ans.getValue());
+//                System.out.print(ans.getKey() + " named " + ans.getValue() + " says ");
+//                System.out.println(dog.speak());
+//            } else if (ans.getKey().equals("Cat")) {
+//                Cat cat = new Cat(ans.getValue());
+//                System.out.print(ans.getKey() + " named " + ans.getValue() + " says ");
+//                System.out.println(cat.speak());
+//            }
+
 
 
 

@@ -5,6 +5,10 @@ public class Dog extends Pet{
         super(name); //from constructor
     }
 
+    public Dog() {
+
+    }
+
     @Override
     public String speak() {
         return "bork bark";

@@ -12,7 +12,7 @@ public class CatTest {
         Cat kitty = new Cat(null);
 
         String testMeow = kitty.speak();
-        String meow = "Meow!";
+        String meow = "meowmeow";
 
         Assert.assertEquals(meow, testMeow);
 

@@ -7,7 +7,7 @@ public class Tiger extends Pet {
 
     @Override
     public String speak() {
-        return "rawr";
+        return "rawr!";
     }
 
 
